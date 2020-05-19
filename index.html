@@ -15,23 +15,33 @@
         fieldset{
             margin-right: 16rem;
         }
-        }
+
+       h6{
+           margin-top: 2rem;
+       }
+
 
     </style>
 
     <canvas style="width: 50%; float: left;" id ="pizarra" width="800" height="800"  class="cuadro"></canvas>
     <div id="menu" style="margin-left: 54%;">
     <fieldset>
+
     <div class="slidecontainer">
         <label for="ciclo">Cantidad De Iteraciones</label>
         <input type="range" min="1" max="900" value="499" class="slider" id="ciclo" oninput="cicloOut.value = ciclo.value">
         <output name="cicloOut" id="cicloOut">499</output>
     </div>
-    <div class="slidecontainer">
+    <div class="slidecontainer"> 
         <label for="rango">Ángulo (1° - 180°)</label>
-        <input type="range" min="1" max="180" value="91" class="slider" id="rango1" oninput="rangoOut.value = rango1.value">
-        <output name="rangoOut" id="rangoOut">91</output>
+        <input type="range" min="1" max="180" value="91" class="slider" id="rango1" oninput="rangoOut.value = String(rango1.value)+ '°' ">
+        <output name="rangoOut" id="rangoOut">91°</output>
     </div>
+    <!-- <div class="slidecontainer">
+        <label for="rango">Grosor del Lápiz</label>
+        <input type="range" min="1" max="20" value="1" class="slider" id="grosor" oninput="rangoG.value = grosor.value">
+        <output name="rangoG" id="rangoG">1</output>
+    </div> -->
     <div>
         <label for="favcolor">Color Base</label>
         <input type="color" id="colorbase" name="favcolor" style="padding: 0;" value="#000000">
@@ -44,15 +54,32 @@
         <label for="favcolor">Color de Fondo</label>
         <input type="color" id="colorfondo" name="favcolor" style="padding: 0;" value="#f9f9f9">
     </div>
-    <button id="hola" type="button">Generar</button>
+    <button id="hola" type="button">GENERAR</button>
     <a id="download" download="geom.jpg">
-        <button id="bajar" type="button">Guardar como JPG</button>
+        <button id="bajar" type="button">GUARDAR COMO JPG</button>
     </a>
+    <hr>
+        <div id="container">
+            <label for="favcolor"><strong>Generación Aleatoria para los flojos</strong></label>
+            <h6 style="margin-bottom: -1.5rem;">Colores<h6>
+        
+                    <button id="coloresBase" type="button">COLORES DISEÑO</button>
+                    <button id="coloresTodos" type="button">TODOS LOS COLORES</button>
+        
+                    <h6 style="margin-bottom: -1.5rem;">Diseño<h6>
+                            <button id="formas" type="button">SOLO DISEÑO</button>
+        
+                            <h6 style="margin-bottom: -1.5rem;">Todo<h6>
+                                    <button id="reset" type="button">ALEATORIO TOTAL</button>
+        
+        </div>
+ 
+
     <div>
-        <br>
+    <hr>
         <p>Este es un pequeño experimento que armé, despues de jugar un rato con turtles, quería poder variar rápido las variables y ver los resultados. El cambio de color se
             produce cuando el número de la iteración es primo.
-        Es posible obtener diseños notables a pesar de lo simple del algoritmo. <cite> <a href="https://www.instagram.com/tomas.konig.t/" target="_blank" rel="author">TKT</a></cite></p>
+        Es posible obtener diseños notables a pesar de lo simple del algoritmo. <br><cite> <a href="https://www.instagram.com/tomas.konig.t/" target="_blank" rel="author">TKT</a></cite>.-</p>
         Utilidades
         <ul>
             <li> <a href="https://github.com/toolness/tiny-turtle#readme" target="_blank" rel="noopener noreferrer">Tiny-Turtle JS</a> </li>
