@@ -15,11 +15,12 @@
         fieldset{
             margin-right: 16rem;
         }
+        }
 
     </style>
 
-    <canvas style="width: 50%; float: left;" id ="pizarra" width="800" height="800" id="cuadro"></canvas>
-    <div style="margin-left: 54%;">
+    <canvas style="width: 50%; float: left;" id ="pizarra" width="800" height="800"  class="cuadro"></canvas>
+    <div id="menu" style="margin-left: 54%;">
     <fieldset>
     <div class="slidecontainer">
         <label for="ciclo">Cantidad De Iteraciones</label>
@@ -28,8 +29,8 @@
     </div>
     <div class="slidecontainer">
         <label for="rango">Ángulo (1° - 180°)</label>
-        <input type="range" min="1" max="180" value="103" class="slider" id="rango1" oninput="rangoOut.value = rango1.value">
-        <output name="rangoOut" id="rangoOut">103</output>
+        <input type="range" min="1" max="180" value="91" class="slider" id="rango1" oninput="rangoOut.value = rango1.value">
+        <output name="rangoOut" id="rangoOut">91</output>
     </div>
     <div>
         <label for="favcolor">Color Base</label>
@@ -38,6 +39,10 @@
       <div>
         <label for="favcolor">Color Nº Primos</label>
         <input type="color" id="colorprimo" name="favcolor" style="padding: 0;" value="#ff0000">
+    </div>
+    <div>
+        <label for="favcolor">Color de Fondo</label>
+        <input type="color" id="colorfondo" name="favcolor" style="padding: 0;" value="#ffffff">
     </div>
     <button id="hola" type="button">Generar</button>
     <a id="download" download="geom.jpg">

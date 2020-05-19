@@ -18,8 +18,9 @@ function draw() {
     var ctx = imagen.getContext("2d");
     var ciclo = document.getElementById('ciclo').value
     var anguloext = document.getElementById('rango1').value
+    var colorf = document.getElementById("colorfondo").value;
     ctx.clearRect(0,0, imagen.width, imagen.height);
-    ctx.fillStyle = "#f9f9f9";
+    ctx.fillStyle = colorf;
     ctx.fillRect(0, 0, imagen.width, imagen.height);
     var t = new TinyTurtle();
 
