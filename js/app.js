@@ -4,6 +4,7 @@ var rese = document.getElementById('reset')
 var colorBase = document.getElementById('coloresBase')
 var colorTodos = document.getElementById('coloresTodos')
 var dis = document.getElementById('formas')
+var back = document.getElementById('colorBack')
 
 draw()
 
@@ -13,6 +14,7 @@ rese.addEventListener('click', randomCompleto)
 colorBase.addEventListener('click', randomColorBase)
 colorTodos.addEventListener('click', randomColor )
 dis.addEventListener('click', randomDis)
+back.addEventListener('click', colorBackground)
 
 function download() {
     var download = document.getElementById("download");
@@ -105,6 +107,11 @@ function randomColor(){
 
     document.getElementById('colorfondo').value = color()
 
+    draw()
+}
+
+function colorBackground(){
+    document.getElementById('colorfondo').value = color()
     draw()
 }
 
