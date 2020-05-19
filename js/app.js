@@ -1,6 +1,6 @@
 var buttonGenerador = document.getElementById('hola')
 var bajar = document.getElementById('bajar')
-
+draw()
 
 buttonGenerador.addEventListener('click', draw)
 bajar.addEventListener('click', download)
