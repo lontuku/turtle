@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sakura.css" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            max-width: none;
+        }
+
+        fieldset{
+            margin-right: 16rem;
+        }
+
+    </style>
+
+    <canvas style="width: 50%; float: left;" id ="pizarra" width="800" height="800" id="cuadro"></canvas>
+    <div style="margin-left: 54%;">
+    <fieldset>
+    <div class="slidecontainer">
+        <label for="ciclo">Cantidad De Iteraciones</label>
+        <input type="range" min="1" max="900" value="300" class="slider" id="ciclo" oninput="cicloOut.value = ciclo.value">
+        <output name="cicloOut" id="cicloOut">300</output>
+    </div>
+    <div class="slidecontainer">
+        <label for="rango">Ángulo (1° - 180°)</label>
+        <input type="range" min="1" max="180" value="50" class="slider" id="rango1" oninput="rangoOut.value = rango1.value">
+        <output name="rangoOut" id="rangoOut">50</output>
+    </div>
+    <div>
+        <label for="favcolor">Color Base</label>
+        <input type="color" id="colorbase" name="favcolor" style="padding: 0;" value="#000000">
+    </div>
+      <div>
+        <label for="favcolor">Color Nº Primos</label>
+        <input type="color" id="colorprimo" name="favcolor" style="padding: 0;" value="#ff0000">
+    </div>
+    <button id="hola" type="button">Generar</button>
+    <a id="download" download="geom.jpg">
+        <button id="bajar" type="button">Guardar como JPG</button>
+    </a>
+    <div>
+        <br>
+        <p>Este es un pequeño experimento que armé, despues de jugar un rato con turtles, quería poder variar rápido las variables y ver los resultados.
+        Es posible obtener diseños notables a pesar de lo simple del algoritmo. <cite> <a href="https://www.instagram.com/tomas.konig.t/" target="_blank" rel="author">TKT</a></cite></p>
+        Utilidades
+        <ul>
+            <li> <a href="https://github.com/toolness/tiny-turtle#readme" target="_blank" rel="noopener noreferrer">Tiny-Turtle JS</a> </li>
+            <li> <a href="https://github.com/oxalorg/sakura" target="_blank" rel="noopener noreferrer">Sakura CSS</a> </li>
+        </ul>
+    </div>
+    </fieldset>
+</div>
+    <script src="../tiny-turtle.js"></script>
+    <script src="app.js"></script>
+    
+</body>
+</html>
