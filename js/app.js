@@ -47,7 +47,7 @@ function compartir(){
     var cpr = document.getElementById('colorprimo').value.slice(1)
     var cf = document.getElementById('colorfondo').value.slice(1)
     var data = `?it=${it}&an=${an}&cb=${cb}&cpr=${cpr}&cf=${cf}`
-    var gen_data = document.getElementById('data')
+    //var gen_data = document.getElementById('data')
     //gen_data.setAttribute("href", data)
     copyLink(data)
 }
