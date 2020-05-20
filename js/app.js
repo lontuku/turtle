@@ -5,8 +5,31 @@ var colorBase = document.getElementById('coloresBase')
 var colorTodos = document.getElementById('coloresTodos')
 var dis = document.getElementById('formas')
 var back = document.getElementById('colorBack')
+var comp = document.getElementById('compartir')
+const queryString = window.location.search
 
-draw()
+if (queryString == ""){
+    draw()
+}
+else {
+    const urlParams = new URLSearchParams(queryString);
+    var it = urlParams.get('it')
+    var an = urlParams.get('an')
+    var cb = urlParams.get('cb')
+    var cpr = urlParams.get('cpr')
+    var cf = urlParams.get('cf')
+    cb = "#"+cb
+    cpr = "#"+cpr
+    cf = "#"+cf
+    document.getElementById('ciclo').value = it
+    document.getElementById('cicloOut').value = it
+    document.getElementById('rango1').value = an
+    document.getElementById('rangoOut').value = an
+    document.getElementById('colorbase').value = cb
+    document.getElementById('colorprimo').value = cpr
+    document.getElementById('colorfondo').value = cf
+    draw()
+}
 
 buttonGenerador.addEventListener('click', draw)
 bajar.addEventListener('click', download)
@@ -15,12 +38,41 @@ colorBase.addEventListener('click', randomColorBase)
 colorTodos.addEventListener('click', randomColor )
 dis.addEventListener('click', randomDis)
 back.addEventListener('click', colorBackground)
+comp.addEventListener('click', compartir)
+
+function compartir(){
+    var it = document.getElementById('ciclo').value
+    var an = document.getElementById('rango1').value
+    var cb = document.getElementById('colorbase').value.slice(1)
+    var cpr = document.getElementById('colorprimo').value.slice(1)
+    var cf = document.getElementById('colorfondo').value.slice(1)
+    var data = `?it=${it}&an=${an}&cb=${cb}&cpr=${cpr}&cf=${cf}`
+    var gen_data = document.getElementById('data')
+    gen_data.setAttribute("href", data)
+    copyLink(data)
+}
+
+function copyLink(data) {
+    var dummy = document.createElement('input'),
+        text = "https://lontuku.github.io/turtle/"+data;
+    document.body.appendChild(dummy);
+    dummy.value = text;
+    dummy.select();
+    document.execCommand('copy');
+    document.body.removeChild(dummy);
+    alert('Dirección de este diseño copiada para compartir');
+}
 
 function download() {
     var download = document.getElementById("download");
     var image = document.getElementById("pizarra").toDataURL("image/png")
         .replace("image/jpg", "image/octet-stream");
     download.setAttribute("href", image);
+    var it = document.getElementById('ciclo').value
+    var an = document.getElementById('rango1').value
+    var name = `geom-it${it}an${an}.jpg`
+    download.setAttribute("download", name);
+
     //download.setAttribute("download","archive.png");
 }
 
